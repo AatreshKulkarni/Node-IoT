@@ -1,0 +1,11 @@
+.siz {
+  width: 500px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+th, td {
+  text-align: center;
+}

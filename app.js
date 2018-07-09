@@ -13,13 +13,9 @@ app.use(express.static(__dirname + '/angular/dist/angular/'));
 //app.use('/', route);
 
 app.get("/", (req, res) => {
-    let item = queryCollection().then(function(result) {
-        console.log('data 1: ', result);
-        return result[0];
-    });
-
-    console.log('data 2: ', item.json());
-    res.send(item.json());
+    queryCollection().then(function(result) {
+        res.send(result);
+    });    
 })
 
 app.get("*",( req, res) => {
@@ -144,8 +140,3 @@ getDatabase()
     .then(() => { exit(`Completed successfully`); })
     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
 
-
-// app.post('/',(req, res) => {
-//     res.send(getDatabase());
-   
-// })
